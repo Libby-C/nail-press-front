@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 
-export async function GET() {
+export async function POST() {
   try {
-    const response = await fetch('http://localhost:5181/');
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`);
     const data = await response.text();
     return NextResponse.json({message: data});
   } catch (error) {

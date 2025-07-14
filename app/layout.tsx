@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ApolloProvider } from '@apollo/client';
-import { client } from '@/lib/apollo-client';
+import { ApolloProviders } from './providers';
 import React from "react";
 import "./globals.css";
 
@@ -26,8 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ApolloProvider client={client}>
-      <html>{children}</html>
-    </ApolloProvider>
+    <html>
+      <body>
+        <ApolloProviders>{children}</ApolloProviders>
+      </body>
+    </html>
   );
 }
