@@ -1,15 +1,8 @@
 'use client';
 
-import { useQuery, gql } from '@apollo/client';
+import { useQuery} from '@apollo/client';
+import { GET_LISTINGS } from './graphql/queries';
 
-const GET_LISTINGS = gql`
-  query GetListings {
-    listings {
-      id
-      title
-    }
-  }
-`;
 
 export default function Home() {
   const { loading, error, data } = useQuery(GET_LISTINGS);
