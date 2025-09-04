@@ -1,19 +1,17 @@
 'use client';
-
-import { useQuery} from '@apollo/client';
-import { GET_LISTINGS } from './graphql/queries';
+import React from 'react';
+import Link from 'next/link';
+import { Button } from '@mantine/core'
 
 
 export default function Home() {
-  const { loading, error, data } = useQuery(GET_LISTINGS);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div>
-      <h1>Listings</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <h1>Home Page!</h1>
+      <Button component={Link} href="/listings">
+        Go to Listings
+      </Button>
     </div>
   );
 }

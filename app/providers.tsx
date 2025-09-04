@@ -1,4 +1,3 @@
-// app/providers.tsx
 'use client';
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
